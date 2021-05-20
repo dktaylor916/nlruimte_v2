@@ -1,0 +1,381 @@
+gm_code,gm_naam,parkeren_p,auto_pct,voet_pct,fiets_pct
+GM1655,Halderberge,0.06,0.75,0.14,0.05
+GM0297,Zaltbommel,0.07,0.75,0.14,0.04
+GM0826,Oosterhout,0.08,0.67,0.19,0.07
+GM0141,Almelo,0.1,0.65,0.19,0.06
+GM1942,Gooise Meren,0.07,0.65,0.23,0.06
+GM1734,Overbetuwe,0.06,0.74,0.15,0.06
+GM0352,Wijk bij Duurstede,0.08,0.65,0.22,0.05
+GM0861,Veldhoven,0.09,0.58,0.25,0.07
+GM1742,Rijssen-Holten,0.08,0.72,0.15,0.04
+GM0163,Hellendoorn,0.05,0.76,0.11,0.07
+GM0530,Hellevoetsluis,0.1,0.57,0.26,0.07
+GM0420,Medemblik,0.07,0.69,0.16,0.08
+GM0502,Capelle aan den IJssel,0.16,0.47,0.32,0.06
+GM0200,Apeldoorn,0.07,0.73,0.14,0.06
+GM0928,Kerkrade,0.09,0.56,0.3,0.04
+GM0302,Nunspeet,0.05,0.81,0.09,0.05
+GM0150,Deventer,0.07,0.66,0.21,0.06
+GM0233,Ermelo,0.06,0.57,0.3,0.07
+GM0109,Coevorden,0.04,0.82,0.06,0.07
+GM1900,Súdwest-Fryslân,0.06,0.75,0.14,0.06
+GM0307,Amersfoort,0.08,0.59,0.27,0.05
+GM1730,Tynaarlo,0.06,0.75,0.12,0.07
+GM0718,Vlissingen,0.1,0.63,0.2,0.06
+GM0183,Tubbergen,0.03,0.81,0.08,0.08
+GM1711,Echt-Susteren,0.06,0.72,0.16,0.07
+GM0503,Delft,0.12,0.44,0.37,0.07
+GM0339,Renswoude,0.07,0.69,0.16,0.08
+GM1952,Midden-Groningen,0.06,0.77,0.12,0.05
+GM0756,Boxmeer,0.05,0.82,0.07,0.06
+GM1641,Maasgouw,0.08,0.6,0.18,0.13
+GM0946,Nederweert,0.03,0.83,0.1,0.04
+GM0080,Leeuwarden,0.09,0.64,0.2,0.07
+GM1891,Dantumadiel,0.06,0.72,0.17,0.05
+GM0512,Gorinchem,0.11,0.59,0.25,0.04
+GM1892,Zuidplas,0.1,0.63,0.2,0.07
+GM0614,Westvoorne,0.06,0.67,0.19,0.08
+GM0439,Purmerend,0.15,0.48,0.3,0.07
+GM0935,Maastricht,0.13,0.53,0.28,0.06
+GM0114,Emmen,0.08,0.71,0.14,0.07
+GM0303,Dronten,0.08,0.69,0.13,0.09
+GM0321,Houten,0.11,0.61,0.22,0.06
+GM0888,Beek,0.06,0.73,0.16,0.05
+GM0246,Heerde,0.04,0.76,0.13,0.07
+GM0707,Zederik,0.06,0.8,0.11,0.04
+GM0015,Grootegast,0.06,0.75,0.11,0.08
+GM1940,De Fryske Marren,0.06,0.77,0.12,0.05
+GM0263,Maasdriel,0.06,0.75,0.12,0.07
+GM0085,Ooststellingwerf,0.04,0.69,0.2,0.08
+GM1728,Bladel,0.05,0.75,0.12,0.07
+GM0034,Almere,0.11,0.54,0.26,0.09
+GM0232,Epe,0.03,0.81,0.09,0.07
+GM1740,Neder-Betuwe,0.05,0.81,0.11,0.03
+GM0053,Winsum,0.05,0.77,0.13,0.06
+GM0777,Etten-Leur,0.08,0.62,0.22,0.08
+GM0432,Opmeer,0.08,0.71,0.15,0.06
+GM0944,Mook en Middelaar,0.06,0.55,0.33,0.06
+GM0293,Westervoort,0.12,0.55,0.29,0.05
+GM0277,Rozendaal,0.02,0.32,0.6,0.06
+GM1895,Oldambt,0.06,0.74,0.15,0.05
+GM0758,Breda,0.09,0.59,0.26,0.06
+GM0243,Harderwijk,0.09,0.64,0.18,0.08
+GM0755,Boekel,0.08,0.74,0.13,0.06
+GM1676,Schouwen-Duiveland,0.06,0.76,0.12,0.06
+GM0394,Haarlemmermeer,0.13,0.61,0.19,0.07
+GM0005,Bedum,0.07,0.7,0.16,0.07
+GM0003,Appingedam,0.07,0.67,0.22,0.04
+GM1931,Krimpenerwaard,0.09,0.64,0.21,0.05
+GM0317,Eemnes,0.06,0.77,0.12,0.04
+GM0014,Groningen,0.08,0.57,0.28,0.08
+GM0765,Pekela,0.06,0.75,0.15,0.04
+GM1930,Nissewaard,0.1,0.53,0.27,0.09
+GM1924,Goeree-Overflakkee,0.06,0.76,0.11,0.07
+GM0025,Marum,0.03,0.84,0.07,0.06
+GM0815,Mill en Sint Hubert,0.05,0.77,0.1,0.08
+GM1640,Leudal,0.04,0.82,0.09,0.05
+GM0498,Drechterland,0.07,0.73,0.16,0.04
+GM0845,Sint-Michielsgestel,0.07,0.73,0.17,0.04
+GM0312,Bunnik,0.06,0.7,0.2,0.04
+GM0058,Dongeradeel,0.08,0.73,0.13,0.06
+GM1652,Gemert-Bakel,0.07,0.78,0.09,0.06
+GM0393,Haarlemmerliede en Spaarnwoude,0.07,0.67,0.16,0.1
+GM0951,Nuth,0.06,0.72,0.15,0.07
+GM1894,Peel en Maas,0.04,0.79,0.12,0.04
+GM0079,Kollumerland en Nieuwkruisland,0.07,0.75,0.13,0.05
+GM0613,Albrandswaard,0.11,0.55,0.26,0.08
+GM0285,Voorst,0.05,0.76,0.12,0.07
+GM0059,Achtkarspelen,0.05,0.75,0.13,0.06
+GM1669,Roerdalen,0.05,0.74,0.17,0.04
+GM0184,Urk,0.12,0.59,0.25,0.04
+GM0632,Woerden,0.09,0.63,0.21,0.06
+GM0797,Heusden,0.09,0.68,0.18,0.05
+GM0779,Geertruidenberg,0.1,0.65,0.19,0.06
+GM0344,Utrecht,0.11,0.52,0.31,0.06
+GM0308,Baarn,0.06,0.72,0.18,0.04
+GM0772,Eindhoven,0.11,0.51,0.32,0.06
+GM1842,Midden-Delfland,0.06,0.65,0.2,0.09
+GM0373,Bergen (NH.),0.08,0.52,0.31,0.09
+GM0304,Neerijnen,0.04,0.82,0.1,0.05
+GM0576,Noordwijkerhout,0.11,0.64,0.18,0.07
+GM1674,Roosendaal,0.08,0.65,0.2,0.07
+GM0396,Heemskerk,0.11,0.49,0.34,0.07
+GM0588,Korendijk,0.06,0.71,0.17,0.07
+GM0820,"Nuenen, Gerwen en Nederwetten",0.06,0.72,0.15,0.06
+GM0202,Arnhem,0.1,0.57,0.26,0.07
+GM0984,Venray,0.05,0.79,0.1,0.06
+GM0473,Zandvoort,0.13,0.41,0.35,0.11
+GM0617,Strijen,0.07,0.75,0.14,0.04
+GM0024,Loppersum,0.04,0.73,0.2,0.03
+GM1904,Stichtse Vecht,0.09,0.67,0.18,0.06
+GM1690,De Wolden,0.03,0.84,0.06,0.07
+GM1722,Ferwerderadiel,0.05,0.81,0.1,0.04
+GM0106,Assen,0.07,0.65,0.2,0.08
+GM0962,Schinnen,0.07,0.64,0.23,0.06
+GM0889,Beesel,0.05,0.75,0.17,0.03
+GM0093,Terschelling,0.05,0.74,0.05,0.16
+GM1735,Hof van Twente,0.03,0.82,0.09,0.05
+GM0809,Loon op Zand,0.13,0.66,0.17,0.04
+GM0171,Noordoostpolder,0.06,0.7,0.12,0.12
+GM0597,Ridderkerk,0.09,0.63,0.22,0.06
+GM1859,Berkelland,0.03,0.81,0.1,0.06
+GM0236,Geldermalsen,0.05,0.8,0.12,0.04
+GM0399,Heiloo,0.11,0.62,0.19,0.08
+GM0098,Weststellingwerf,0.04,0.8,0.11,0.05
+GM0518,'s-Gravenhage,0.12,0.41,0.41,0.06
+GM0627,Waddinxveen,0.1,0.61,0.22,0.07
+GM1724,Bergeijk,0.04,0.81,0.08,0.07
+GM0047,Veendam,0.06,0.72,0.15,0.07
+GM0074,Heerenveen,0.07,0.72,0.14,0.07
+GM1945,Berg en Dal,0.07,0.62,0.25,0.06
+GM0279,Scherpenzeel,0.09,0.66,0.22,0.04
+GM0451,Uithoorn,0.12,0.55,0.24,0.08
+GM0553,Lisse,0.18,0.5,0.25,0.06
+GM1896,Zwartewaterland,0.07,0.69,0.17,0.07
+GM0088,Schiermonnikoog,0.03,0.73,0.04,0.2
+GM0397,Heemstede,0.09,0.48,0.37,0.06
+GM1950,Westerwolde,0.03,0.8,0.11,0.06
+GM0907,Gennep,0.06,0.76,0.12,0.06
+GM0599,Rotterdam,0.1,0.5,0.34,0.06
+GM0345,Veenendaal,0.1,0.55,0.27,0.08
+GM1685,Landerd,0.05,0.8,0.08,0.07
+GM0173,Oldenzaal,0.08,0.64,0.22,0.06
+GM0405,Hoorn,0.12,0.5,0.3,0.08
+GM0400,Den Helder,0.11,0.55,0.27,0.07
+GM0851,Steenbergen,0.05,0.8,0.11,0.05
+GM0090,Smallingerland,0.08,0.67,0.19,0.06
+GM0118,Hoogeveen,0.07,0.71,0.16,0.07
+GM0441,Schagen,0.07,0.7,0.18,0.06
+GM0022,Leek,0.05,0.75,0.14,0.05
+GM0983,Venlo,0.06,0.71,0.18,0.05
+GM1903,Eijsden-Margraten,0.06,0.73,0.17,0.04
+GM0542,Krimpen aan den IJssel,0.12,0.48,0.34,0.06
+GM1773,Olst-Wijhe,0.04,0.8,0.11,0.04
+GM0226,Duiven,0.1,0.64,0.19,0.07
+GM0340,Rhenen,0.07,0.55,0.32,0.06
+GM0384,Diemen,0.09,0.59,0.24,0.07
+GM0523,Hardinxveld-Giessendam,0.09,0.66,0.18,0.07
+GM0848,Son en Breugel,0.09,0.68,0.14,0.08
+GM0866,Waalre,0.05,0.66,0.2,0.08
+GM0531,Hendrik-Ido-Ambacht,0.11,0.55,0.26,0.08
+GM0590,Papendrecht,0.12,0.44,0.35,0.09
+GM0417,Laren,0.06,0.63,0.24,0.07
+GM1723,Alphen-Chaam,0.02,0.83,0.05,0.09
+GM1696,Wijdemeren,0.13,0.59,0.21,0.08
+GM0275,Rheden,0.05,0.71,0.18,0.06
+GM0575,Noordwijk,0.1,0.51,0.31,0.08
+GM1705,Lingewaard,0.07,0.65,0.2,0.08
+GM0221,Doesburg,0.06,0.6,0.23,0.11
+GM1774,Dinkelland,0.04,0.8,0.09,0.06
+GM0823,Oirschot,0.05,0.83,0.07,0.05
+GM0893,Bergen (L.),0.04,0.58,0.33,0.05
+GM0416,Langedijk,0.08,0.67,0.21,0.05
+GM0056,Zuidhorn,0.04,0.76,0.12,0.08
+GM0654,Borsele,0.06,0.8,0.1,0.04
+GM0402,Hilversum,0.08,0.43,0.4,0.09
+GM0335,Montfoort,0.09,0.65,0.19,0.07
+GM0119,Meppel,0.07,0.69,0.19,0.05
+GM1667,Reusel-De Mierden,0.04,0.82,0.08,0.06
+GM0296,Wijchen,0.08,0.69,0.17,0.06
+GM0267,Nijkerk,0.08,0.63,0.2,0.09
+GM0228,Ede,0.05,0.77,0.12,0.06
+GM0610,Sliedrecht,0.12,0.52,0.3,0.06
+GM0160,Hardenberg,0.08,0.75,0.12,0.05
+GM0479,Zaanstad,0.12,0.51,0.31,0.06
+GM0882,Landgraaf,0.08,0.57,0.29,0.05
+GM0569,Nieuwkoop,0.1,0.64,0.18,0.08
+GM0873,Woensdrecht,0.04,0.85,0.08,0.03
+GM0209,Beuningen,0.06,0.72,0.16,0.06
+GM1883,Sittard-Geleen,0.05,0.68,0.22,0.05
+GM0358,Aalsmeer,0.14,0.56,0.24,0.06
+GM0388,Enkhuizen,0.13,0.59,0.23,0.05
+GM0355,Zeist,0.09,0.52,0.33,0.06
+GM0482,Alblasserdam,0.09,0.59,0.26,0.06
+GM0788,Haaren,0.04,0.79,0.1,0.07
+GM0294,Winterswijk,0.06,0.76,0.13,0.05
+GM0351,Woudenberg,0.05,0.67,0.24,0.05
+GM0585,Binnenmaas,0.09,0.72,0.15,0.05
+GM0762,Deurne,0.05,0.75,0.13,0.07
+GM0938,Meerssen,0.06,0.67,0.21,0.07
+GM1783,Westland,0.11,0.6,0.22,0.08
+GM0353,IJsselstein,0.13,0.53,0.29,0.05
+GM0213,Brummen,0.04,0.67,0.24,0.05
+GM0289,Wageningen,0.11,0.56,0.24,0.09
+GM0865,Vught,0.07,0.64,0.22,0.07
+GM1507,Horst aan de Maas,0.06,0.8,0.09,0.05
+GM1525,Teylingen,0.1,0.61,0.23,0.06
+GM0852,Waterland,0.09,0.65,0.16,0.1
+GM0310,De Bilt,0.09,0.62,0.23,0.06
+GM0899,Brunssum,0.09,0.59,0.28,0.04
+GM0252,Heumen,0.06,0.58,0.28,0.08
+GM1949,Waadhoeke,0.05,0.78,0.11,0.05
+GM0376,Blaricum,0.07,0.69,0.15,0.09
+GM1598,Koggenland,0.06,0.77,0.13,0.04
+GM1926,Pijnacker-Nootdorp,0.11,0.53,0.27,0.09
+GM0589,Oudewater,0.09,0.63,0.22,0.06
+GM0965,Simpelveld,0.07,0.68,0.21,0.04
+GM0766,Dongen,0.08,0.65,0.2,0.06
+GM0620,Vianen,0.07,0.73,0.16,0.05
+GM0606,Schiedam,0.13,0.49,0.31,0.07
+GM0971,Stein,0.06,0.64,0.24,0.06
+GM0385,Edam-Volendam,0.1,0.61,0.26,0.03
+GM0017,Haren,0.07,0.67,0.17,0.09
+GM0717,Veere,0.09,0.71,0.11,0.09
+GM0622,Vlaardingen,0.15,0.44,0.32,0.08
+GM1948,Meierijstad,0.05,0.73,0.14,0.07
+GM0377,Bloemendaal,0.08,0.5,0.3,0.12
+GM1695,Noord-Beveland,0.06,0.83,0.07,0.04
+GM0273,Putten,0.05,0.8,0.08,0.07
+GM1708,Steenwijkerland,0.06,0.74,0.12,0.08
+GM0216,Culemborg,0.11,0.61,0.23,0.06
+GM0431,Oostzaan,0.08,0.62,0.23,0.06
+GM0733,Lingewaal,0.07,0.76,0.14,0.04
+GM0489,Barendrecht,0.12,0.54,0.26,0.08
+GM0703,Reimerswaal,0.04,0.82,0.09,0.05
+GM0840,Rucphen,0.05,0.79,0.1,0.06
+GM0375,Beverwijk,0.14,0.52,0.28,0.06
+GM0313,Bunschoten,0.1,0.62,0.21,0.07
+GM0957,Roermond,0.09,0.66,0.17,0.08
+GM0545,Leerdam,0.1,0.62,0.23,0.04
+GM1901,Bodegraven-Reeuwijk,0.09,0.67,0.18,0.06
+GM0738,Aalburg,0.07,0.76,0.12,0.04
+GM0166,Kampen,0.06,0.69,0.17,0.08
+GM0060,Ameland,0.05,0.73,0.1,0.12
+GM0867,Waalwijk,0.07,0.67,0.19,0.06
+GM0988,Weert,0.05,0.75,0.15,0.04
+GM1731,Midden-Drenthe,0.03,0.81,0.09,0.07
+GM0274,Renkum,0.05,0.61,0.26,0.07
+GM0689,Giessenlanden,0.06,0.74,0.12,0.08
+GM0086,Opsterland,0.04,0.7,0.18,0.08
+GM1729,Gulpen-Wittem,0.06,0.77,0.12,0.05
+GM0197,Aalten,0.05,0.73,0.14,0.08
+GM0824,Oisterwijk,0.07,0.72,0.14,0.08
+GM0786,Grave,0.1,0.66,0.17,0.07
+GM0299,Zevenaar,0.07,0.69,0.16,0.08
+GM0448,Texel,0.07,0.65,0.15,0.13
+GM1702,Sint Anthonis,0.03,0.7,0.17,0.1
+GM0547,Leiderdorp,0.11,0.56,0.27,0.06
+GM0158,Haaksbergen,0.05,0.77,0.13,0.06
+GM0148,Dalfsen,0.05,0.79,0.11,0.05
+GM0513,Gouda,0.13,0.44,0.34,0.08
+GM0147,Borne,0.07,0.67,0.2,0.05
+GM0629,Wassenaar,0.09,0.54,0.26,0.1
+GM0037,Stadskanaal,0.06,0.7,0.16,0.08
+GM0737,Tytsjerksteradiel,0.05,0.76,0.12,0.07
+GM0794,Helmond,0.07,0.61,0.24,0.08
+GM0050,Zeewolde,0.06,0.71,0.12,0.11
+GM0986,Voerendaal,0.05,0.7,0.19,0.06
+GM0532,Stede Broec,0.11,0.57,0.25,0.07
+GM1509,Oude IJsselstreek,0.06,0.74,0.14,0.05
+GM0716,Tholen,0.04,0.77,0.14,0.05
+GM1955,Montferland,0.06,0.76,0.12,0.07
+GM0175,Ommen,0.04,0.83,0.09,0.05
+GM0687,Middelburg,0.1,0.62,0.23,0.05
+GM0268,Nijmegen,0.09,0.49,0.35,0.06
+GM1586,Oost Gelre,0.06,0.72,0.16,0.06
+GM0796,'s-Hertogenbosch,0.11,0.57,0.24,0.07
+GM1663,De Marne,0.04,0.82,0.09,0.04
+GM0096,Vlieland,0.01,0.58,0.12,0.28
+GM0244,Hattem,0.06,0.74,0.14,0.06
+GM1701,Westerveld,0.03,0.83,0.05,0.09
+GM0383,Castricum,0.09,0.58,0.27,0.06
+GM0743,Asten,0.05,0.82,0.09,0.04
+GM0262,Lochem,0.04,0.82,0.09,0.05
+GM0556,Maassluis,0.13,0.45,0.34,0.08
+GM0225,Druten,0.07,0.73,0.16,0.04
+GM0880,Wormerland,0.08,0.68,0.2,0.04
+GM1700,Twenterand,0.07,0.74,0.13,0.05
+GM1680,Aa en Hunze,0.02,0.83,0.08,0.06
+GM0203,Barneveld,0.07,0.76,0.12,0.05
+GM0453,Velsen,0.11,0.56,0.27,0.07
+GM0847,Someren,0.04,0.79,0.09,0.07
+GM0301,Zutphen,0.09,0.63,0.21,0.07
+GM0770,Eersel,0.05,0.78,0.11,0.06
+GM0744,Baarle-Nassau,0.01,0.92,0.01,0.06
+GM0603,Rijswijk,0.1,0.45,0.36,0.08
+GM0505,Dordrecht,0.09,0.51,0.27,0.12
+GM1699,Noordenveld,0.04,0.77,0.12,0.07
+GM0484,Alphen aan den Rijn,0.1,0.56,0.25,0.09
+GM0193,Zwolle,0.09,0.61,0.21,0.09
+GM1651,Eemsmond,0.04,0.77,0.16,0.04
+GM0917,Heerlen,0.07,0.56,0.31,0.05
+GM0361,Alkmaar,0.11,0.58,0.25,0.06
+GM0736,De Ronde Venen,0.08,0.69,0.16,0.06
+GM1884,Kaag en Braassem,0.1,0.69,0.15,0.06
+GM0331,Lopik,0.06,0.75,0.12,0.07
+GM0214,Buren,0.05,0.8,0.09,0.05
+GM1916,Leidschendam-Voorburg,0.1,0.52,0.32,0.07
+GM0363,Amsterdam,0.1,0.44,0.39,0.07
+GM0164,Hengelo,0.09,0.62,0.23,0.06
+GM0798,Hilvarenbeek,0.05,0.81,0.07,0.07
+GM0881,Onderbanken,0.04,0.63,0.26,0.07
+GM0668,West Maas en Waal,0.05,0.77,0.12,0.06
+GM0637,Zoetermeer,0.12,0.48,0.31,0.09
+GM0177,Raalte,0.05,0.77,0.12,0.05
+GM0281,Tiel,0.12,0.59,0.21,0.08
+GM0009,Ten Boer,0.04,0.77,0.11,0.08
+GM0879,Zundert,0.04,0.73,0.17,0.05
+GM1709,Moerdijk,0.06,0.78,0.11,0.05
+GM0995,Lelystad,0.06,0.64,0.19,0.11
+GM0398,Heerhugowaard,0.1,0.58,0.23,0.09
+GM0362,Amstelveen,0.12,0.48,0.32,0.08
+GM1911,Hollands Kroon,0.04,0.81,0.1,0.05
+GM0437,Ouder-Amstel,0.06,0.7,0.18,0.06
+GM0153,Enschede,0.1,0.63,0.23,0.04
+GM0230,Elburg,0.06,0.79,0.11,0.04
+GM0715,Terneuzen,0.06,0.74,0.13,0.06
+GM0784,Gilze en Rijen,0.07,0.73,0.14,0.07
+GM0981,Vaals,0.11,0.53,0.31,0.06
+GM1659,Laarbeek,0.07,0.74,0.12,0.07
+GM0579,Oegstgeest,0.1,0.53,0.3,0.06
+GM0010,Delfzijl,0.07,0.71,0.17,0.06
+GM1927,Molenwaard,0.08,0.71,0.14,0.08
+GM0678,Kapelle,0.07,0.76,0.11,0.06
+GM0370,Beemster,0.05,0.81,0.08,0.07
+GM0168,Losser,0.04,0.76,0.14,0.06
+GM1658,Heeze-Leende,0.05,0.77,0.08,0.1
+GM0189,Wierden,0.04,0.79,0.13,0.05
+GM1771,Geldrop-Mierlo,0.11,0.57,0.24,0.08
+GM0642,Zwijndrecht,0.12,0.52,0.29,0.07
+GM0664,Goes,0.07,0.7,0.16,0.07
+GM1621,Lansingerland,0.1,0.57,0.23,0.11
+GM1876,Bronckhorst,0.03,0.81,0.09,0.06
+GM0546,Leiden,0.12,0.47,0.33,0.07
+GM0392,Haarlem,0.1,0.46,0.39,0.06
+GM0828,Oss,0.07,0.69,0.18,0.06
+GM0406,Huizen,0.13,0.54,0.27,0.07
+GM0356,Nieuwegein,0.09,0.54,0.28,0.09
+GM1714,Sluis,0.05,0.79,0.08,0.08
+GM1684,Cuijk,0.1,0.69,0.13,0.07
+GM0677,Hulst,0.06,0.75,0.15,0.05
+GM0222,Doetinchem,0.08,0.7,0.16,0.06
+GM0757,Boxtel,0.06,0.71,0.19,0.05
+GM0501,Brielle,0.1,0.64,0.18,0.09
+GM0180,Staphorst,0.03,0.88,0.06,0.04
+GM0785,Goirle,0.09,0.61,0.23,0.07
+GM1721,Bernheze,0.06,0.79,0.09,0.06
+GM0638,Zoeterwoude,0.13,0.62,0.15,0.1
+GM0342,Soest,0.09,0.58,0.27,0.06
+GM0269,Oldebroek,0.05,0.8,0.11,0.05
+GM1581,Utrechtse Heuvelrug,0.06,0.72,0.18,0.04
+GM1719,Drimmelen,0.08,0.71,0.15,0.06
+GM0858,Valkenswaard,0.07,0.67,0.19,0.07
+GM0415,Landsmeer,0.09,0.5,0.29,0.12
+GM0327,Leusden,0.05,0.72,0.15,0.07
+GM0611,Cromstrijen,0.07,0.78,0.11,0.04
+GM0855,Tilburg,0.09,0.57,0.27,0.07
+GM0626,Voorschoten,0.11,0.48,0.31,0.1
+GM1681,Borger-Odoorn,0.03,0.83,0.07,0.07
+GM0457,Weesp,0.11,0.55,0.28,0.06
+GM0072,Harlingen,0.1,0.65,0.2,0.05
+GM0748,Bergen op Zoom,0.09,0.57,0.27,0.06
+GM0450,Uitgeest,0.1,0.67,0.19,0.05
+GM0753,Best,0.08,0.64,0.2,0.07
+GM0856,Uden,0.08,0.7,0.17,0.05
+GM1706,Cranendonck,0.05,0.79,0.09,0.06
+GM0870,Werkendam,0.06,0.75,0.13,0.06
+GM0534,Hillegom,0.14,0.53,0.28,0.05
+GM0874,Woudrichem,0.1,0.69,0.16,0.05
+GM0994,Valkenburg aan de Geul,0.1,0.66,0.21,0.03
+GM0537,Katwijk,0.12,0.5,0.32,0.07
+GM0584,Oud-Beijerland,0.11,0.53,0.28,0.08

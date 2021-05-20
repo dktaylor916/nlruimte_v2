@@ -1,0 +1,698 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mobiliteit Ruimte in Nederland</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+<script src="https://d3js.org/d3.v4.js"></script>
+<style>
+.tick {opacity: 0;}
+.domain{opacity: 0;}
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; z-index: 0; }
+#testbut {position:absolute; z-index: 1}
+.button {position:absolute; z-index: 1;right: 20px;top:20px;background-color: white;}
+</style>
+</head>
+<body>
+
+<style>
+.legend {
+background-color: #fff;
+border-radius: 3px;
+bottom: 30px;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+padding: 10px;
+position: absolute;
+right: 10px;
+z-index: 1;
+}
+ 
+.legend h4 {
+margin: 0 0 10px;
+}
+ 
+.legend div span {
+border-radius: 50%;
+display: inline-block;
+height: 10px;
+margin-right: 5px;
+width: 10px;
+}
+</style>
+<div class='button'><input type="radio" name="map_layer" id="gem_but" onclick="gem_but()" checked>Gemeente<br>
+<input type="radio" name="map_layer" onclick="wijk_but()"id="wijk_but">Wijk<br>
+<input type="radio" name="map_layer" id="buurt_but" onclick='buurt_but()'>Buurt<br>
+<input type="radio" name="map_layer" id="none_but" onclick='none_but()'>None<br>
+</div>
+<div id="map"></div>
+<!-- Add 2 buttons -->
+
+
+ 
+<div id="state-legend" class="legend">
+<h4>Bike + Ped (%)</h4>
+<div><span style="background-color: #f7fcf5"></span>0 - 20</div>
+<div><span style="background-color: #c7e9c0"></span>20 - 40</div>
+<div><span style="background-color: #74c476"></span>40 - 60</div>
+<div><span style="background-color: #238b45"></span>60 - 80</div>
+<div><span style="background-color: #00441b"></span>80 - 100</div>
+
+</div>
+ 
+</div>
+ 
+<script>
+
+	mapboxgl.accessToken = 'pk.eyJ1IjoiZHRheWxvcmdvdWQiLCJhIjoiY2tlbzA1OHltMjJyNjMwcGM2eHZsMGowaiJ9.jtxQ1bgoZL9_sacqiAlTsg';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/light-v10',
+center: [5, 52.2],
+minZoom: 7,
+zoom: 7
+});
+ 
+var zoomThreshold = 9;
+var hoveredStateId = null;
+map.on('load', function () {
+
+map.addSource('gemeente_source', {
+'type': 'geojson',
+'data': 'web/gemeente_real_v2.json',
+'generateId':true
+});
+map.addSource('buurt_source', {
+'type': 'geojson',
+'data': 'web/new_buurt_v2.json',
+'generateId':true
+});
+map.addSource('wijk_source', {
+'type': 'geojson',
+'data': 'web/wijk_real.json',
+'generateId':true
+});
+ 
+ 
+map.addLayer(
+{
+'id': 'gemeente',
+'source': 'gemeente_source',
+'type': 'fill',
+
+'layout':{'visibility':'visible'},
+
+'paint': {
+'fill-color': [
+'interpolate',
+['linear'],
+['get', 'voet_fiet_'],
+0,
+'#f7fcf5',
+
+.2,
+'#c7e9c0',
+
+.4,
+'#74c476',
+
+.6,
+'#238b45',
+
+.8,
+'#00441b'
+
+],
+'fill-opacity': .75
+}
+},
+'waterway-label'
+,
+map.on('click', 'gemeente', function (e) {
+updategem((String(e.features[0].properties.gm_naam)))
+})
+);
+
+map.addLayer(
+{
+'id': 'gemeente_line',
+'source': 'gemeente_source',
+'type': 'line',
+
+'layout':{'visibility':'visible'}
+,
+
+'paint':{
+	'line-opacity':[
+'case',
+['boolean', ['feature-state', 'hover'], false],
+.8,
+0
+]
+}
+},
+'waterway-label'
+);
+
+
+ 
+map.addLayer(
+{
+'id': 'wijk',
+'source': 'wijk_source',
+'type': 'fill',
+'layout':{'visibility':'none'},
+
+'paint': {
+'fill-color': [
+'interpolate',
+['linear'],
+['get', 'voet_fiet_pct'],
+0,
+'#f7fcf5',
+
+.2,
+'#c7e9c0',
+
+.4,
+'#74c476',
+
+.6,
+'#238b45',
+
+.8,
+'#00441b'
+],
+'fill-opacity': .75
+}
+},
+'waterway-label',
+map.on('click', 'wijk', function (e) {
+updatewijk((String(e.features[0].properties.wk_code)))
+})
+);
+
+map.addLayer(
+{
+'id': 'wijk_line',
+'source': 'wijk_source',
+'type': 'line',
+
+'layout':{'visibility':'visible'}
+,
+
+'paint':{
+	'line-opacity':[
+'case',
+['boolean', ['feature-state', 'hover'], false],
+.8,
+0
+]
+}
+},
+'waterway-label'
+);
+
+map.addLayer(
+{
+'id': 'buurt',
+'source': 'buurt_source',
+'type': 'fill',
+'layout':{'visibility':'none'},
+
+'paint': {
+'fill-color': [
+'interpolate',
+['linear'],
+['get', 'voet_fiet_pct'],
+0,
+'#f7fcf5',
+
+.2,
+'#c7e9c0',
+
+.4,
+'#74c476',
+
+.6,
+'#238b45',
+
+.8,
+'#00441b'
+],
+'fill-opacity': .75
+}
+},
+'waterway-label',
+map.on('click', 'buurt', function (e) {
+updatebuurt((String(e.features[0].properties.bu_naam)))
+})
+);
+
+map.addLayer(
+{
+'id': 'buurt_line',
+'source': 'buurt_source',
+'type': 'line',
+
+'layout':{'visibility':'visible'}
+,
+// only include features for which the "isState"
+// property is "true"
+'paint':{
+	'line-opacity':[
+'case',
+['boolean', ['feature-state', 'hover'], false],
+.8,
+0
+]
+}
+},
+'waterway-label'
+);
+map.on('mousemove', 'gemeente', function (e) {
+if (e.features.length > 0) {
+if (hoveredStateId !== null) {
+map.setFeatureState(
+{ source: 'gemeente_source', id: hoveredStateId },
+{ hover: false }
+);
+}
+hoveredStateId = e.features[0].id;
+map.setFeatureState(
+{ source: 'gemeente_source', id: hoveredStateId },
+{ hover: true }
+);
+}
+});
+ 
+
+map.on('mouseleave', 'gemeente', function () {
+if (hoveredStateId !== null) {
+map.setFeatureState(
+{ source: 'gemeente_source', id: hoveredStateId },
+{ hover: false }
+);
+}
+hoveredStateId = null;
+})
+
+
+map.on('mousemove', 'wijk', function (e) {
+if (e.features.length > 0) {
+if (hoveredStateId !== null) {
+map.setFeatureState(
+{ source: 'wijk_source', id: hoveredStateId },
+{ hover: false }
+);
+}
+hoveredStateId = e.features[0].id;
+map.setFeatureState(
+{ source: 'wijk_source', id: hoveredStateId },
+{ hover: true }
+);
+}
+});
+
+map.on('mouseleave', 'wijk', function () {
+if (hoveredStateId !== null) {
+map.setFeatureState(
+{ source: 'wijk_source', id: hoveredStateId },
+{ hover: false }
+);
+}
+hoveredStateId = null;
+})
+
+
+map.on('mousemove', 'buurt', function (e) {
+if (e.features.length > 0) {
+if (hoveredStateId !== null) {
+map.setFeatureState(
+{ source: 'buurt_source', id: hoveredStateId },
+{ hover: false }
+);
+}
+hoveredStateId = e.features[0].id;
+map.setFeatureState(
+{ source: 'buurt_source', id: hoveredStateId },
+{ hover: true }
+);
+}
+});
+
+map.on('mouseleave', 'buurt', function () {
+if (hoveredStateId !== null) {
+map.setFeatureState(
+{ source: 'buurt_source', id: hoveredStateId },
+{ hover: false }
+);
+}
+hoveredStateId = null;
+})
+
+});
+
+
+
+function gem_but() {
+	map.setLayoutProperty('gemeente', 'visibility','visible')
+	map.setLayoutProperty('buurt', 'visibility','none')
+	map.setLayoutProperty('wijk', 'visibility','none')
+}
+function wijk_but() {
+	map.setLayoutProperty('wijk', 'visibility','visible')
+	map.setLayoutProperty('buurt', 'visibility','none')
+	map.setLayoutProperty('gemeente', 'visibility','none')
+}
+function buurt_but() {
+	map.setLayoutProperty('buurt', 'visibility','visible')
+	map.setLayoutProperty('wijk', 'visibility','none')
+	map.setLayoutProperty('gemeente', 'visibility','none')
+}
+function none_but() {
+	map.setLayoutProperty('buurt', 'visibility','none')
+	map.setLayoutProperty('wijk', 'visibility','none')
+	map.setLayoutProperty('gemeente', 'visibility','none')
+}
+
+
+var container = map.getCanvasContainer()
+// set the dimensions and margins of the graph
+var margin = {top: 30, right: 30, bottom: 70, left: 60},
+    width = 500 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select(container)
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+	.style('position', 'absolute')
+	.style('z-index',2)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+svg.append('image')
+    .attr('xlink:href', 'car.svg')
+    .attr('position','absolute')
+    .attr('x',-50)
+    .attr('y',60)
+    .attr('width', 40)
+    .attr('height', 40)
+svg.append('image')
+    .attr('xlink:href', 'park.svg')
+    .attr('position','absolute')
+    .attr('x',-50)
+    .attr('y',15)
+    .attr('width', 35)
+    .attr('height', 35)
+    svg.append('image')
+    .attr('xlink:href', 'dog.svg')
+    .attr('position','absolute')
+    .attr('x',-50)
+    .attr('y',105)
+    .attr('width', 30)
+    .attr('height', 30)
+    svg.append('image')
+    .attr('xlink:href', 'bike.svg')
+    .attr('position','absolute')
+    .attr('x',-50)
+    .attr('y',150)
+    .attr('width', 40)
+    .attr('height', 40)
+
+
+// Initialize the X axis
+var getx = d3.scaleLinear()
+    .domain([0, 100])
+    .range([ 0, width])
+var xAxis = svg.append("g")
+.attr("transform", "translate(0," + height + ")")
+
+  svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(getx))
+    .selectAll("text")
+      .attr("transform", "translate(-10,0)rotate(-45)")
+      .attr('opacity',0)
+      .style("text-anchor", "end")
+   
+
+// Initialize the Y axis
+ var gety = d3.scaleBand()
+    .range([ 0, height ])
+    .padding(.5);
+var yAxis = svg.append("g")
+.attr("class", "myYaxis");
+  svg.append("g")
+    .call(d3.axisLeft(gety))
+
+// A function that create / update the plot for a given variable:
+function updategem(selectedVar) {
+  console.log(selectedVar)
+  // Parse the Data
+  d3.csv("web/gemeente_real_v2.csv", function(data) {
+    woo=data
+    // X axis
+    gety.domain(data.map(function(d) { return d.gm_naam; }))
+    yAxis.transition().duration(1000).call(d3.axisLeft(gety))
+
+    // Add Y axis
+
+
+    // variable u: map data to existing bars
+    var u = svg.selectAll("rect")
+      .data(data)
+    var t = svg.selectAll('.lab').data(data)
+    var e = svg.selectAll('.name').data(data)
+
+    // update bars
+    u
+      .enter()
+      .append("rect")
+      .merge(u)
+      .transition()
+      .duration(1000)
+        .attr("y", function(d) { return gety(d.gm_naam); })
+        .attr("x", function(d) { return getx(0) })
+        .attr("height", gety.bandwidth())
+        .attr("width", function(d) { return getx(d[selectedVar] * 100)})
+        .attr("fill", function(d){
+            if(d.gm_naam == 'auto'){
+                return '#d7191c'
+            }
+            if(d.gm_naam == 'fiets'){
+                return '#a6d96a'
+            }
+            if(d.gm_naam == 'voet'){
+                return '#1a9641'
+            }
+			if(d.gm_naam == 'parkeren'){
+                return '#FF8C00'
+            }
+            
+        })
+    t
+      .enter()
+      .append("text")
+      .merge(t)
+      .transition()
+      .duration(1000)
+        .attr('class','lab')
+        .attr("y", function(d) { return gety(d.gm_naam) +20; })
+        .attr("x", function(d) {if (d[selectedVar] <= 0.06) {return getx(d[selectedVar] * 100) + 10;}
+      else{
+        return getx(d[selectedVar] * 100) - 12;
+      } })
+        .attr('text-anchor','middle')
+        .attr('fill','white')
+        .attr('font-weight',700)
+        .text(function(d){return ((d3.format(".0%"))(d[selectedVar]))})
+        e
+      .enter()
+      .append("text")
+      .merge(e)
+      .transition()
+      .duration(1000)
+        .attr('class','name')
+        .attr("y", 0)
+        .attr("x", 0)
+        .attr('text-anchor','start')
+        .attr('font-size',30)
+        .attr('fill','black')
+        .attr('font-weight',700)
+        .text(function(d){return selectedVar})
+            
+  })
+
+}
+
+function updatewijk(selectedVar) {
+  console.log(selectedVar)
+  // Parse the Data
+  d3.csv("web/wijk_real_v2.csv", function(data) {
+    woo=data
+    // X axis
+    gety.domain(data.map(function(d) { return d.wk_code; }))
+    yAxis.transition().duration(1000).call(d3.axisLeft(gety))
+
+    // Add Y axis
+
+
+    // variable u: map data to existing bars
+    var u = svg.selectAll("rect")
+      .data(data)
+    var t = svg.selectAll('.lab').data(data)
+    var e = svg.selectAll('.name').data(data)
+
+    // update bars
+    u
+      .enter()
+      .append("rect")
+      .merge(u)
+      .transition()
+      .duration(1000)
+        .attr("y", function(d) { return gety(d.wk_code); })
+        .attr("x", function(d) { return getx(0) })
+        .attr("height", gety.bandwidth())
+        .attr("width", function(d) { return getx(d[selectedVar] * 100)})
+        .attr("fill", function(d){
+            if(d.wk_code == 'auto'){
+                return '#d7191c'
+            }
+            if(d.wk_code == 'fiets'){
+                return '#a6d96a'
+            }
+            if(d.wk_code == 'voet'){
+                return '#1a9641'
+            }
+			if(d.wk_code == 'parkeren'){
+                return '#FF8C00'
+            }
+            
+        })
+    t
+      .enter()
+      .append("text")
+      .merge(t)
+      .transition()
+      .duration(1000)
+        .attr('class','lab')
+        .attr("y", function(d) { return gety(d.wk_code) +20; })
+        .attr("x", function(d) {if (d[selectedVar] <= 0.06) {return getx(d[selectedVar] * 100) + 10;}
+      else{
+        return getx(d[selectedVar] * 100) - 12;
+      } })
+        .attr('text-anchor','middle')
+        .attr('fill','white')
+        .attr('font-weight',700)
+        .text(function(d){return ((d3.format(".0%"))(d[selectedVar]))})
+        e
+      .enter()
+      .append("text")
+      .merge(e)
+      .transition()
+      .duration(1000)
+        .attr('class','name')
+        .attr("y", 0)
+        .attr("x", 0 )
+        .attr('text-anchor','start')
+        .attr('font-size',30)
+        .attr('fill','black')
+        .attr('font-weight',700)
+        .text(function(d){return selectedVar})
+            
+  })
+
+}
+function updatebuurt(selectedVar) {
+  console.log(selectedVar)
+  // Parse the Data
+  d3.csv("web/buurt_new_v4.csv", function(data) {
+    woo=data
+    // X axis
+    gety.domain(data.map(function(d) { return d.bu_naam; }))
+    yAxis.transition().duration(1000).call(d3.axisLeft(gety))
+
+    // Add Y axis
+
+
+    // variable u: map data to existing bars
+    var u = svg.selectAll("rect")
+      .data(data)
+    var t = svg.selectAll('.lab').data(data)
+    var e = svg.selectAll('.name').data(data)
+
+    // update bars
+    u
+      .enter()
+      .append("rect")
+      .merge(u)
+      .transition()
+      .duration(1000)
+        .attr("y", function(d) { return gety(d.bu_naam); })
+        .attr("x", function(d) { return getx(0) })
+        .attr("height", gety.bandwidth())
+        .attr("width", function(d) { return getx(d[selectedVar] * 100)})
+        .attr("fill", function(d){
+            if(d.bu_naam == 'auto'){
+                return '#d7191c'
+            }
+            if(d.bu_naam == 'fiets'){
+                return '#a6d96a'
+            }
+            if(d.bu_naam == 'voet'){
+                return '#1a9641'
+            }
+			if(d.bu_naam == 'parkeren'){
+                return '#FF8C00'
+            }
+            
+        })
+    t
+      .enter()
+      .append("text")
+      .merge(t)
+      .transition()
+      .duration(1000)
+        .attr('class','lab')
+        .attr("y", function(d) { return gety(d.bu_naam) +20; })
+        .attr("x", function(d) {if (d[selectedVar] <= 0.06) {return getx(d[selectedVar] * 100) + 10;}
+      else{
+        return getx(d[selectedVar] * 100) - 12;
+      } })
+        .attr('text-anchor','middle')
+        .attr('fill','white')
+        .attr('font-weight',700)
+        .text(function(d){return ((d3.format(".0%"))(d[selectedVar]))})
+    e
+      .enter()
+      .append("text")
+      .merge(e)
+      .transition()
+      .duration(1000)
+        .attr('class','name')
+        .attr("y", 0)
+        .attr("x", 0 )
+        .attr('text-anchor','start')
+        .attr('font-size',30)
+        .attr('fill','black')
+        .attr('font-weight',700)
+        .text(function(d){return selectedVar.substring(10,50)})
+        
+  })
+
+}
+
+// Initialize plot
+
+
+</script>
+ 
+</body>
+</html>
