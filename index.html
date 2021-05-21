@@ -15,6 +15,9 @@ body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; z-index: 0; }
 #testbut {position:absolute; z-index: 1}
 .button {position:absolute; z-index: 1;right: 20px;top:20px;background-color: white;font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;}
+.button2 {position:absolute; z-index: 1;left: 10px;bottom:30px;background-color: white;font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;}
+
+
 </style>
 </head>
 <body>
@@ -49,6 +52,10 @@ width: 10px;
 <input type="radio" name="map_layer" id="buurt_but" onclick='buurt_but()'>Buurt<br>
 <input type="radio" name="map_layer" id="none_but" onclick='none_but()'>None<br>
 </div>
+<div class='button2'><input type="radio" name="base" id="osm" value="osm" checked >OSM<br>
+<input type="radio" name="base" id="osm" value='sat'>Sattelite<br>
+  
+  </div>
 <div id="map"></div>
 <!-- Add 2 buttons -->
 
@@ -69,13 +76,16 @@ width: 10px;
 <script>
 
 	mapboxgl.accessToken = 'pk.eyJ1IjoiZHRheWxvcmdvdWQiLCJhIjoiY2tlbzA1OHltMjJyNjMwcGM2eHZsMGowaiJ9.jtxQ1bgoZL9_sacqiAlTsg';
-var map = new mapboxgl.Map({
+var map = 
+new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/light-v10',
 center: [5, 52.2],
 minZoom: 7,
 zoom: 7
 });
+
+
  
 var zoomThreshold = 9;
 var hoveredStateId = null;
