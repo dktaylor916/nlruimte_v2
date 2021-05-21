@@ -14,7 +14,7 @@
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; z-index: 0; }
 #testbut {position:absolute; z-index: 1}
-.button {position:absolute; z-index: 1;right: 20px;top:20px;background-color: white;}
+.button {position:absolute; z-index: 1;right: 20px;top:20px;background-color: white;font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;}
 </style>
 </head>
 <body>
@@ -56,11 +56,11 @@ width: 10px;
  
 <div id="state-legend" class="legend">
 <h4>Bike + Ped (%)</h4>
-<div><span style="background-color: #f7fcf5"></span>0 - 20</div>
-<div><span style="background-color: #c7e9c0"></span>20 - 40</div>
-<div><span style="background-color: #74c476"></span>40 - 60</div>
-<div><span style="background-color: #238b45"></span>60 - 80</div>
-<div><span style="background-color: #00441b"></span>80 - 100</div>
+<div><span style="background-color: #edf8fb"></span>0 - 20</div>
+<div><span style="background-color: #b2e2e2"></span>20 - 40</div>
+<div><span style="background-color: #66c2a4"></span>40 - 60</div>
+<div><span style="background-color: #2ca25f"></span>60 - 80</div>
+<div><span style="background-color: #006d2c"></span>80 - 100</div>
 
 </div>
  
@@ -112,19 +112,19 @@ map.addLayer(
 ['linear'],
 ['get', 'voet_fiet_'],
 0,
-'#f7fcf5',
+'#edf8fb',
 
 .2,
-'#c7e9c0',
+'#b2e2e2',
 
 .4,
-'#74c476',
+'#66c2a4',
 
 .6,
-'#238b45',
+'#2ca25f',
 
 .8,
-'#00441b'
+'#006d2c'
 
 ],
 'fill-opacity': .75
@@ -173,19 +173,19 @@ map.addLayer(
 ['linear'],
 ['get', 'voet_fiet_pct'],
 0,
-'#f7fcf5',
+'#edf8fb',
 
 .2,
-'#c7e9c0',
+'#b2e2e2',
 
 .4,
-'#74c476',
+'#66c2a4',
 
 .6,
-'#238b45',
+'#2ca25f',
 
 .8,
-'#00441b'
+'#006d2c'
 ],
 'fill-opacity': .75
 }
@@ -230,19 +230,19 @@ map.addLayer(
 ['linear'],
 ['get', 'voet_fiet_pct'],
 0,
-'#f7fcf5',
+'#edf8fb',
 
 .2,
-'#c7e9c0',
+'#b2e2e2',
 
 .4,
-'#74c476',
+'#66c2a4',
 
 .6,
-'#238b45',
+'#2ca25f',
 
 .8,
-'#00441b'
+'#006d2c'
 ],
 'fill-opacity': .75
 }
