@@ -52,9 +52,7 @@ width: 10px;
 <input type="radio" name="map_layer" id="buurt_but" onclick='buurt_but()'>Buurt<br>
 <input type="radio" name="map_layer" id="none_but" onclick='none_but()'>None<br>
 </div>
-<div class='button2'><input type="radio" name="base" id="osm" value="osm" checked >OSM<br>
-<input type="radio" name="base" id="osm" value='sat'>Sattelite<br>
-  
+
   </div>
 <div id="map"></div>
 <!-- Add 2 buttons -->
@@ -98,7 +96,7 @@ map.addSource('gemeente_source', {
 });
 map.addSource('buurt_source', {
 'type': 'geojson',
-'data': 'web/new_buurt_v3.json',
+'data': 'web/buurt_final_v3.json',
 'generateId':true
 });
 map.addSource('wijk_source', {
@@ -623,7 +621,7 @@ function updatewijk(selectedVar) {
 function updatebuurt(selectedVar) {
   console.log(selectedVar)
   // Parse the Data
-  d3.csv("web/buurt_new_v4.csv", function(data) {
+  d3.csv("web/buurt_final_final.csv", function(data) {
     woo=data
     // X axis
     gety.domain(data.map(function(d) { return d.bu_naam; }))
