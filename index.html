@@ -52,8 +52,7 @@ width: 10px;
 <input type="radio" name="map_layer" id="buurt_but" onclick='buurt_but()'>Buurt<br>
 <input type="radio" name="map_layer" id="none_but" onclick='none_but()'>None<br>
 </div>
-<div class='button2'><input type="radio" name="base" id="osm" value="osm" checked >OSM<br>
-<input type="radio" name="base" id="osm" value='sat'>Sattelite<br>
+
   
   </div>
 <div id="map"></div>
@@ -98,7 +97,7 @@ map.addSource('gemeente_source', {
 });
 map.addSource('buurt_source', {
 'type': 'geojson',
-'data': 'web/nl_buurt_clean.geojson',
+'data': 'web/new_buurt_v3.json',
 'generateId':true
 });
 map.addSource('wijk_source', {
