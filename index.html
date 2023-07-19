@@ -14,14 +14,19 @@
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; z-index: 0; }
 #testbut {position:absolute; z-index: 1}
-.button {position:absolute; z-index: 1;right: 20px;top:20px;background-color: white;font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;}
-.button2 {position:absolute; z-index: 1;left: 10px;bottom:30px;background-color: white;font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;}
+.button {position:absolute; z-index: 1;right: 20px;top:20px;font: 12px/20px 'Futura';}
+.button2 {position:absolute; z-index: 1;left: 10px;bottom:30px;background-color: white;font: 12px/20px 'Futura';}
+
+.name{
+  font-family: Futura;
+  font-size: 2.5vw;
+}
 
 #des{
 background-color: #fff;
 border-radius: 3px;
 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-family: 'Futura';
 padding: 10px;
 position: relative;
 top: 10px;
@@ -74,7 +79,7 @@ height: 10px;
 margin-right: 5px;
 width: 10px;
 }
-.button1 {position:absolute; z-index: 1;;left: 20px;bottom:30px;background-color: white;font-family: Tahoma, sans-serif;}
+.button1 {position:absolute; z-index: 1;;left: 20px;bottom:30px;background-color: white;font-family: "Futura";}
 </style>
 </head>
 <body>
@@ -85,8 +90,7 @@ background-color: #fff;
 border-radius: 3px;
 bottom: 30px;
 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-padding: 10px;
+font: 12px/20px 'Futura';
 position: absolute;
 
 z-index: 1;
@@ -105,9 +109,10 @@ width: 10px;
 }
 </style>
 
-<div class='button'><input type="radio" name="map_layer" id="gem_but" onclick="gem_but()" checked>Gemeente<br>
-<input type="radio" name="map_layer" onclick="wijk_but()"id="wijk_but">Wijk<br>
-<input type="radio" name="map_layer" id="buurt_but" onclick='buurt_but()'>Buurt<br>
+<div class='button' >
+<input type="radio" name="map_layer" id="buurt_but" onclick='buurt_but()' checked>Neighborhood<br>
+<input type="radio" name="map_layer" onclick="wijk_but()"id="wijk_but">District<br>
+<input type="radio" name="map_layer" id="gem_but" onclick="gem_but()">City<br>
 <input type="radio" name="map_layer" id="none_but" onclick='none_but()'>None<br>
 </div>
 
@@ -116,7 +121,7 @@ width: 10px;
 <div id="map"></div>
 <!-- Add 2 buttons -->
 
-<div class='button1'><button type="button"  onclick="d3.select('#des').style('z-index',1)" >Description</button>
+<div class='button1'><button type="button" onclick="d3.select('#des').style('z-index',1)" >Description</button>
 </div>
  
 <div id="state-legend" class="legend">
@@ -175,7 +180,7 @@ map.addLayer(
 'source': 'gemeente_source',
 'type': 'fill',
 
-'layout':{'visibility':'visible'},
+'layout':{'visibility':'none'},
 
 'paint': {
 'fill-color': [
@@ -293,7 +298,7 @@ map.addLayer(
 'id': 'buurt',
 'source': 'buurt_source',
 'type': 'fill',
-'layout':{'visibility':'none'},
+'layout':{'visibility':'visible'},
 
 'paint': {
 'fill-color': [
